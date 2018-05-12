@@ -7,5 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BackendTechAssessmentApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BackendTechAssessmentApplication.class, args);
+		//this is a change
 	}
 }
