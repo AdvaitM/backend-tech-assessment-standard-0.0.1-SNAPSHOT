@@ -1,0 +1,4 @@
+create table buyer (id bigint auto_increment primary key, description varchar(255) , email_id varchar(100));
+create table seller (id bigint auto_increment primary key, description varchar(255) , email_id varchar(100));
+create table project (id bigint auto_increment primary key, budget double, closing datetime, description varchar(255), seller_id bigint, foreign key (seller_id) references seller(id));
+create table bid (id bigint auto_increment primary key, bid_amount double, bid_placed_date_time datetime, buyer_id bigint, project_id bigint, foreign key (project_id) references project(id), foreign key (buyer_id) references buyer(id));
