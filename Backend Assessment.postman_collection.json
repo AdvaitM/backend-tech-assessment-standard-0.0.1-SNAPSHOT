@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "a2e1b0c3-dd4c-4735-8bb2-742dc3653528",
+		"name": "Backend Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Bid",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"bidAmount\" : 123.0,\r\n   \"buyerId\"  : 1\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bids?projectId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bids"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Auto Bidder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"bidAmount\" : 123.0,\r\n   \"buyerId\"  : 1\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bids?projectId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bids"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Buyer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"description\" : \"buyer\",\r\n   \"emailId\" : \"buyer@buyer.com\"\r\n}"
+				},
+				"url": "http://localhost:8080/buyers"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Seller",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"description\" : \"seller\",\r\n   \"emailId\" : \"seller@seller.com\"\r\n}"
+				},
+				"url": "http://localhost:8080/buyers"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Project",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"sellerId\" : 1,\r\n   \"projectDescription\" : \"SomeProject\",\r\n   \"maximumBudget\" : 0,\r\n   \"bidClosingDateTime\" : \"2018-10-23T18:25:43.511Z\"\r\n}"
+				},
+				"url": "http://localhost:8080/projects"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Project By Id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"sellerId\" : 1,\r\n   \"projectDescription\" : \"SomeProject\",\r\n   \"maximumBudget\" : 123456.0,\r\n   \"bidClosingDateTime\" : \"2018-10-23T18:25:43.511Z\"\r\n}"
+				},
+				"url": "http://localhost:8080/projects"
+			},
+			"response": []
+		}
+	]
+}
