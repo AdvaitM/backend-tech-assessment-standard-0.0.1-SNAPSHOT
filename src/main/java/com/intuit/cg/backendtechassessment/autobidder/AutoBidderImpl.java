@@ -42,6 +42,8 @@ public class AutoBidderImpl implements AutoBidder {
 	public void addNewBid(BidJdbcRepository bidRepository, Project project) {
 		List<Bid> bids = bidRepository.getLowestBidsByProjectId(project.getId(), project.getBidClosingDateTime());
 		if (bids.isEmpty()) {
+			Bid bid = new Bid(buyerId, project.getId(), minimumBidLimit, new Date());
+			bidRepository.insertBid(bid);
 			return;
 		}
 

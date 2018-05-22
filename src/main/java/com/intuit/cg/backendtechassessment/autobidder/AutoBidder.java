@@ -19,6 +19,8 @@ public interface AutoBidder {
 	 * <li>The new bid to be added by the auto bidder must be greater than the
 	 * minimum bid limit.</li>
 	 * </ul>
+	 * If no bids are present the autobidder adds the lowest minimum bid as the new
+	 * bid.
 	 * 
 	 * @param bidRepository
 	 * @param project
