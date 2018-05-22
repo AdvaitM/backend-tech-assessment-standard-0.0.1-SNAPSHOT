@@ -64,6 +64,13 @@ public class BuyerJdbcRepository {
 		return sellers.get(sellers.size() - 1).getId();
 	}
 
+	/**
+	 * Retrieves the buyer by id.
+	 * 
+	 * @param buyerId
+	 *            the id of the buyer
+	 * @return the buyer
+	 */
 	public Buyer getBuyerById(Long buyerId) {
 		return jdbcTemplate.queryForObject("select * from buyer where id=?", new Object[] { buyerId },
 				new BuyerRowMapper());

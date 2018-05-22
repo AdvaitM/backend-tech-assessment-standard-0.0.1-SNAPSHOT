@@ -3,6 +3,7 @@ package com.intuit.cg.backendtechassessment.request;
 import org.springframework.dao.EmptyResultDataAccessException;
 
 import com.intuit.cg.backendtechassessment.buyer.srv.repository.BuyerJdbcRepository;
+import com.intuit.cg.backendtechassessment.exception.BadRequestException;
 import com.intuit.cg.backendtechassessment.exception.EntityNotFoundException;
 
 /**
@@ -64,11 +65,29 @@ public class CreateAutoBidderRequest {
 		return minimumBidLimit;
 	}
 
+	/**
+	 * Validates the {@link CreateAutoBidderRequest}. For a request to be valid it
+	 * must:
+	 * <ul>
+	 * <li>Have a buyer id which exists in the database.</li>
+	 * <li>Have a minimum bid limit which isn't zero or negative.</li>
+	 * <li>Have a bid factor which isn't zero or negative.</li>
+	 * </ul>
+	 * 
+	 * @param buyerRepository
+	 */
 	public void validate(BuyerJdbcRepository buyerRepository) {
 		try {
 			buyerRepository.getBuyerById(buyerId);
 		} catch (EmptyResultDataAccessException exception) {
 			throw new EntityNotFoundException("No buyer with buyerId id [" + buyerId + "] were found.");
+		}
+
+		if (minimumBidLimit <= 0) {
+			throw new BadRequestException("The minimum bid limit cannot be zero or negative.");
+		}
+		if (bidFactor <= 0.0) {
+			throw new BadRequestException("The bid factor cannot be zero or negative.");
 		}
 	}
 

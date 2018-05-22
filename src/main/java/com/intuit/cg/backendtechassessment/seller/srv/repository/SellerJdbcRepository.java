@@ -12,7 +12,8 @@ import org.springframework.stereotype.Repository;
 import com.intuit.cg.backendtechassessment.seller.srv.entity.Seller;
 
 /**
- * The repository used for accessing seller data.
+ * The repository used for accessing seller data. This is used for inserting and
+ * retrieving a seller.
  * 
  * @author Advait Moghe
  *
