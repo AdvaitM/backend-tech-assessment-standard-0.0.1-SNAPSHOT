@@ -42,7 +42,16 @@ import com.intuit.cg.backendtechassessment.seller.srv.repository.SellerJdbcRepos
  * points is delegated to their respective operation classes. This makes the
  * controller much more scalable and modular as we can easily swap out
  * operations without affecting the working of the controller. This way we also
- * don't need to have all logic in a single class.
+ * don't need to have all logic in a single class. I decided to go with an in
+ * memory auto bidder and don't write the auto bidders to a database as it is
+ * just a prototype. The AutoBidderListener is an observer which notifies the
+ * auto bidders that a new bid has been added or that a new auto bidder has been
+ * added, the listener is a singleton since all classes in the future will need
+ * to share the same autobidder as instantiating a new listener will cause a new
+ * instance of the project auto bidder map to be created which will lead to sync
+ * issues. The technology used in this assessment is the same that was provided,
+ * Spring boot mvc for the web service implementation and H2 in-memory database
+ * for data persistence.
  * 
  * @author Advait Moghe
  *
