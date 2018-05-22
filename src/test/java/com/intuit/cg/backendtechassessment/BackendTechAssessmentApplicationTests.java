@@ -47,4 +47,26 @@ public class BackendTechAssessmentApplicationTests {
 //			the service should throw a bad request exception since the buyer id does not exist 
 //		}
 //	}
+	
+//
+//	@Test
+//	public void testAutoBidder_NoPreviousBids() {
+//		Tests adding an autobidder when no bids exist on the bid table. 
+//		assertEquals(project.getLowestBid, autoBidder.minBidLimit);
+// 		Asserts that the minimum bid is added as the new bid.
+//	}
+	
+//	@Test
+//	public void testAutoBidder_BidExceedesMinBidLimit() {
+//		Tests adding an autobidder when the new bid exceeds the min bid limit. 
+//		assertEquals(project.getLowestBid, autoBidder.minBidLimit);
+// 		Asserts that the minimum bid is added as the new bid.
+//	}
+	
+//	@Test
+//	public void testAutoBidder_LowestBidIsLessThanMinBidLimit() {
+//		Tests adding an autobidder when the lowest bid on the project is less than the min bid limit
+//		assertEquals(project.getLowestBid, lowestBid);
+// 		Asserts that the lowest bid is unchanged
+//	}
 }
